@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculatpr</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        width: 428px;
+margin-left: 678px;
+margin-top: 161px;
+border: 1px solid rgba(36, 35, 35, 0.199);
+background-color: #2de45b;
+border-radius: 5px;
+}
+      .grid-container {
+        display: grid;
+grid-template-columns: auto auto auto auto;
+column-gap: 18px;
+row-gap: 13px;
+padding: 10px;
+      }
+      .item {
+        cursor: pointer;
+border: 1px solid transparent;
+border-radius: 23%;
+background-color: rgb(158, 22, 22);
+color: white;
+
+height: 68px;
+font-size: 36px;
+      }
+      .item:hover {
+        background-color: blueviolet;
+      }
+      #display {
+        margin-bottom: 15px;
+  width: 98%;
+  font-size: 30px;
+  height: 59px;
+}
+      
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <input type="text" id="display" />
+      <div class="grid-container">
+        <button class="item" value="7" onclick="append('8')">
+          7
+        </button>
+        <button class="item" onclick="append('8')">
+          8
+        </button>
+        <button class="item" onclick="append('9')">
+          9
+        </button>
+        <button class="item" onclick="append(' + ')">
+          +
+        </button>
+        <button class="item" onclick="append('4')">
+          4
+        </button>
+        <button class="item" onclick="append('5')">
+          5
+        </button>
+        <button class="item" onclick="append('6')">
+          6
+        </button>
+        <button class="item" onclick="append(' - ')">
+          -
+        </button>
+        <button id="one" class="item" onclick="append('1')">
+          1
+        </button>
+        <button class="item" onclick="append('2')">
+          2
+        </button>
+        <button class="item" onclick="append('3')">
+          3
+        </button>
+        <button class="item" onclick="append(' * ')">
+          *
+        </button>
+        <button class="item" onclick="calculate()">
+          =
+        </button>
+        <button class="item" onclick="append('0')">
+          0
+        </button>
+        <button class="item" onclick="clear1()">
+          clear
+        </button>
+        <button class="item" onclick="append(' / ')">
+          /
+        </button>
+      </div>
+    </div>
+
+    <script>
+  function append(val){
+   document.getElementById("display").value +=val; 
+  }
+
+   function clear1(){
+    let cler = " ";
+    document.getElementById("display").value = cler ; 
+    document.getElementById("display").value +='';
+
+   }
+function calculate(){
+let exp =  document.getElementById("display").value ;
+ let result = eval(exp);
+ document.getElementById("display").value = result;
+}
+
+    </script>
+  </body>
+</html>
